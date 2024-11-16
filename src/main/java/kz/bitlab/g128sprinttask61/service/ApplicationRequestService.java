@@ -15,4 +15,8 @@ public class ApplicationRequestService {
   public List<ApplicationRequest> findAll() {
     return applicationRequestRepository.findAll();
   }
+
+  public void create(ApplicationRequest applicationRequest) {
+    applicationRequestRepository.save(applicationRequest);
+  }
 }

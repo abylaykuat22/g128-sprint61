@@ -43,18 +43,12 @@
     </div>
   </div>
 </nav>
-
-<div style="display: flex; justify-content: space-between">
-  <div th:each="request : ${requests}" class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title" th:text="${'Заявка от ' + request.userName}"></h5>
-      <p class="card-text" th:text="${'Курс: ' + request.courseName}"></p>
-      <p class="card-text" th:text="${request.commentary}"></p>
-      <p class="card-text" th:text="${'Телефон: ' + request.phone}"></p>
-      <a href="#" class="btn btn-primary">Подробнее</a>
-    </div>
-  </div>
-</div>
-
+<form action="/application-request/create" method="post">
+  <input type="text" name="userName" placeholder="ФИО..." class="form-control"><br>
+  <input type="text" name="courseName" placeholder="Курс..." class="form-control"><br>
+  <input type="text" name="phone" placeholder="Телефон..." class="form-control"><br>
+  <textarea name="commentary" id="" cols="30" rows="10" class="form-control" placeholder="Комментарии..."></textarea>
+  <button class="btn btn-primary">Добавить заявку</button>
+</form><br>
 </body>
 </html>
