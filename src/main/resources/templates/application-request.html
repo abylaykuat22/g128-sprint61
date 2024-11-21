@@ -45,7 +45,9 @@
 </nav>
 <form action="/application-request/create" method="post">
   <input type="text" name="userName" placeholder="ФИО..." class="form-control"><br>
-  <input type="text" name="courseName" placeholder="Курс..." class="form-control"><br>
+  <select name="course.id" class="form-control">
+    <option th:each="course : ${kursy}" th:value="${course.id}" th:text="${course.name + ' - ' + course.price + ' USD'}"></option>
+  </select>
   <input type="text" name="phone" placeholder="Телефон..." class="form-control"><br>
   <textarea name="commentary" id="" cols="30" rows="10" class="form-control" placeholder="Комментарии..."></textarea>
   <button class="btn btn-primary">Добавить заявку</button>
